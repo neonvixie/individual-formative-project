@@ -1,11 +1,61 @@
 # Car price analysis
 
 ## Dataset Content
-* Describe your dataset. Choose a dataset of reasonable size to avoid exceeding the repository's maximum size of 100Gb.
+The data used in this project presents different variables associated with different car models, including their price. The raw dataset has 26 categories in total. Here is the brief description of each of the 26 categories contained in it:
+
+1. `Car_ID`: Unique id for each observation (Interger)
+2. `Symboling`: Its assigned insurance risk rating, A value of +3 indicates that the auto is risky, -3 that it is probably pretty safe. (Categorical)
+3. `CarName`: Name of the car model (Categorical)
+4. `fueltype`: Car fuel type i.e gas or diesel (Categorical)
+5. `aspiration`: Aspiration used in a car (Categorical)
+    - `'std'` refers to a naturally aspirated engine, which means it draws in air at atmospheric pressure without any extra components.
+    - `'turbo'` refers to a turbocharged engine, which uses a turbine powered by exhaust gases to force more air into the engine, resulting in more power.
+6. `doornumber`: Number of doors in a car (Categorical)
+7. `carbody`: body of a car (Categorical)
+    - `'convertible'`: A car with a retractable roof that can be a soft top (fabric) or a hardtop (metal).
+    - `'hatchback'`: A car with a rear hatch door that swings upward, combining the passenger area and cargo space.
+    - `'sedan'`: A car with four doors and a separate, enclosed trunk.
+    - `'wagon'`: Similar to a sedan but with an extended roofline that continues over a large cargo area, often with a rear liftgate.
+    - `'hardtop'`: A car without a pillar between the front and rear side windows, giving it a more open, airy feel when the windows are down.
+8. `drivewheel`: type of a drive wheel (Categorical)
+    - `'rwd'` (Rear-Wheel Drive): Power is sent to the rear wheels. This is common in sports cars and trucks.
+    - `'fwd'` (Front-Wheel Drive): Power is sent to the front wheels. This is the most common setup for passenger cars.
+    - `'4wd'` (Four-Wheel Drive): Power is sent to all four wheels. This is designed for better traction in off-road or slippery conditions.
+9. `enginelocation`: Location of the car engine (Categorical)
+10. `wheelbase`: Weelbase of a car (Numeric). The distance between the center points of the front and rear wheels. A longer wheelbase generally results in a smoother ride, while a shorter wheelbase can make a car more agile.
+11. `carlength`: Length of a car (Numeric)
+12. `carwidth`: Width of a car (Numeric)
+13. `carheight`: height of a car (Numeric)
+14. `curbweight`: The weight of a car without occupants or baggage. (Numeric)
+15. `enginetype`: Type of the car engine. (Categorical)
+    - `'ohc'` (Overhead Cam): The camshaft is located in the cylinder head. This is the general term for this design.
+    - `'dohc'` (Dual Overhead Cam): The most common modern design, with two separate camshafts per cylinder bank—one for intake valves and one for exhaust valves. This allows for better engine breathing and more power.
+    - `'dohcv'` (Dual Overhead Cam Valve): Less common variant of DOHC engine.
+    - `'ohcv'` (Overhead Cam Valve): This term is similar to OHC but emphasizes that the valves are also located in the cylinder head.
+    - `'ohcf'` (Overhead Cam with F-Head): A specific and less common design where the intake valves are in the cylinder head and the exhaust valves are in the block.
+    - `'l'`: This likely stands for a L-head engine, an older design where the intake and exhaust valves were located side-by-side in the engine block.
+    - `'rotor'`: A rotary engine, which uses triangular rotors to convert pressure into rotational motion instead of pistons.
+16. `cylindernumber`: cylinder placed in the car (Categorical). A cylinder is a chamber where fuel is combusted to generate power.
+17. `enginesize`: Size of a car (Numeric). This refers to the total volume of air and fuel an engine can draw in during one cycle.
+18. `fuelsystem`: Fuel system of a car (Categorical). This is the method used to deliver fuel to the engine's combustion chambers.
+    - `'mpfi'` (Multi-Port Fuel Injection): Each cylinder has its own fuel injector, which is the most common modern design.
+    - `'spfi'` (Single-Point Fuel Injection): A single injector feeds all cylinders, typically a less efficient system than MPFI.
+    - `'spdi'` (Single-Point Diesel Injection): A diesel version of spfi.
+    - `'mfi'` (Mechanical Fuel Injection): An older system that uses mechanical pumps and injectors instead of electronic ones.
+    - `'idi'` (Indirect Diesel Injection): The fuel is injected into a pre-chamber before entering the main combustion chamber.
+    - `'1bbl'`, `'2bbl'`, `'4bbl'`: These refer to carburetor-based systems. bbl stands for "barrel," which is a passageway in the carburetor. More barrels generally allow for more air and fuel to enter the engine, thus more power.
+19. `boreratio`: Boreratio of a car (Numeric). The bore-stroke ratio is the ratio of the cylinder's diameter (bore) to the piston's travel distance (stroke). This ratio helps determine how the engine produces power.
+20. `stroke`: Stroke or volume inside the engine (Numeric). The distance the piston travels up and down inside the cylinder. This is a critical factor in calculating the engine's displacement.
+21. `compressionratio`: compression ratio of a car (Numeric). This is the ratio of the volume inside a cylinder when the piston is at the bottom of its stroke to the volume when the piston is at the top. A higher compression ratio can result in more power and efficiency but may require higher-octane fuel.
+22. `horsepower`: Horsepower (Numeric). A measurement of an engine's power output. It tells you how quickly the engine can produce force, which directly relates to a car's top speed and acceleration.
+23. `peakrpm`: car peak rpm (Numeric). This stands for Revolutions Per Minute. It is a measure of how fast the engine crankshaft is rotating. Peak RPM is the specific engine speed at which the engine produces its maximum power.
+24. `citympg`: Mileage in city (Numeric). It measures fuel economy under typical urban driving conditions, with frequent stops and starts.
+25. `highwaympg`: Mileage on highway (Numeric). It measures fuel economy during a consistent, higher-speed drive, like on a highway, without stopping. Highway MPG is almost always higher because a car is more fuel-efficient when it doesn't have to constantly accelerate from a stop.
+26. `price` (Dependent variable): Price of a car (Numeric)
 
 
 ## Business Requirements
-* Describe your business requirements
+The aim of this project is to model the price of cars with the available independent variables. It will be used by the management to understand how exactly the prices vary with the independent variables. They can accordingly manipulate the design of the cars, the business strategy etc. to meet certain price levels. Further, the model will be a good way for management to understand the pricing dynamics of a new market. 
 
 
 ## Hypothesis and how to validate?
@@ -45,13 +95,11 @@
 * What new skills or tools do you plan to learn next based on your project experience? 
 
 ## Main Data Analysis Libraries
-* Here you should list the libraries you used in the project and provide an example(s) of how you used these libraries.
+I used `pandas` to read and modify the .csv files. I used `matplotlib`, `seaborn` and `plotly` for data visualization
 
 
 ## Credits 
-
-* In this section, you need to reference where you got your content, media and extra help from. It is common practice to use code from other repositories and tutorials, however, it is important to be very specific about these sources to avoid plagiarism. 
-* You can break the credits section up into Content and Media, depending on what you have included in your project. 
+I use business requirements and the data from the kaggle [Car Price Prediction](https://www.kaggle.com/datasets/hellbuoy/car-price-prediction). I relied heavily on AI (especially Google's Gemini) to understand the dataset content. I also relied on copilot and chatgpt for simple queries and I used it to help me a little bit with the code.
 
 ### Content 
 
