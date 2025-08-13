@@ -59,7 +59,34 @@ The aim of this project is to model the price of cars with the available indepen
 
 
 ## Hypothesis and how to validate?
-* List here your project hypothesis(es) and how you envision validating it (them) 
+Based on the dataset, the columns most likely to have a strong correlation with car price are those that describe a car's size, performance, and features. Here is a breakdown of the variables and their likely correlation with price, from strongest to weakest:
+
+##### Strongest Correlation
+These variables directly relate to the cost of a car's materials, engineering, and performance.
+- horsepower: A car's power output is one of the most significant factors in its price. Higher horsepower generally means a more expensive car.
+- enginesize: The physical size of the engine, which is a key determinant of power, is a strong indicator of price. Larger engines are typically more costly.
+- curbweight: This is the car's weight without passengers or cargo. Heavier cars often require more materials and a larger engine, making them more expensive. This also correlates with the car's overall size.
+- Dimensions (carlength, carwidth, carheight, wheelbase): Larger cars generally cost more to manufacture and are priced higher. The wheelbase, in particular, is a key indicator of a car's size and ride quality.
+- drivewheel: The drivetrain type is a major design factor. A specialized system like 4wd (four-wheel drive) is typically more expensive than fwd (front-wheel drive) or rwd (rear-wheel drive).
+- aspiration: A turbocharged (turbo) engine is a more complex and expensive component than a standard (std) naturally aspirated engine.
+- brand: The manufacturer brand (e.g., Honda vs. Mercedes) is arguably the single most important determinant of price. You'd likely need to extract this from the CarName column.
+- carbody: The body style has a significant impact. A luxury sedan or a convertible is typically more expensive than a standard hatchback.
+
+##### Moderate Correlation
+These variables are components of the engine that contribute to performance but are not as directly tied to price as the high-level metrics.
+- cylindernumber: This is related to enginesize and horsepower. More cylinders generally mean a larger, more expensive engine.
+- fuelsystem: The type of fuel injection system affects performance and cost. A modern multi-port fuel injection system (mpfi) is more advanced and often more expensive than an older carburetor-based system (1bbl, 2bbl).
+- citympg and highwaympg: Fuel efficiency often has an inverse relationship with price. High-performance, expensive cars tend to have lower MPG, while more affordable economy cars have higher MPG.
+
+##### Weak or No Correlation
+These variables are unlikely to have a strong, consistent relationship with a car's price.
+- car_ID: This is a unique identifier for each car and has no correlation with any of its properties, including price.
+- doornumber: The number of doors has a weak relationship with price. While some two-door sports cars are expensive, so are four-door luxury sedans.
+- symboling: This is an insurance risk rating and does not directly relate to the car's market price.
+
+##### Potential indirect correlation
+- stroke, boreratio, compressionratio, peakrpm: These are technical engineering details that contribute to performance, but their direct, standalone correlation with the final sale price is often weak. The effects of these are better captured by the more holistic measures of horsepower and enginesize.
+
 
 ## Project Plan
 * Outline the high-level steps taken for the analysis.
