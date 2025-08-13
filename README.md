@@ -63,59 +63,45 @@ Based on the dataset, the columns most likely to have a strong correlation with 
 
 ##### Strongest Correlation
 These variables directly relate to the cost of a car's materials, engineering, and performance.
-- horsepower: A car's power output is one of the most significant factors in its price. Higher horsepower generally means a more expensive car.
-- enginesize: The physical size of the engine, which is a key determinant of power, is a strong indicator of price. Larger engines are typically more costly.
-- curbweight: This is the car's weight without passengers or cargo. Heavier cars often require more materials and a larger engine, making them more expensive. This also correlates with the car's overall size.
-- Dimensions (carlength, carwidth, carheight, wheelbase): Larger cars generally cost more to manufacture and are priced higher. The wheelbase, in particular, is a key indicator of a car's size and ride quality.
-- drivewheel: The drivetrain type is a major design factor. A specialized system like 4wd (four-wheel drive) is typically more expensive than fwd (front-wheel drive) or rwd (rear-wheel drive).
-- aspiration: A turbocharged (turbo) engine is a more complex and expensive component than a standard (std) naturally aspirated engine.
-- brand: The manufacturer brand (e.g., Honda vs. Mercedes) is arguably the single most important determinant of price. You'd likely need to extract this from the CarName column.
-- carbody: The body style has a significant impact. A luxury sedan or a convertible is typically more expensive than a standard hatchback.
+- `horsepower`: A car's power output is one of the most significant factors in its price. Higher horsepower generally means a more expensive car.
+- `enginesize`: The physical size of the engine, which is a key determinant of power, is a strong indicator of price. Larger engines are typically more costly.
+- `curbweight`: This is the car's weight without passengers or cargo. Heavier cars often require more materials and a larger engine, making them more expensive. This also correlates with the car's overall size.
+- Dimensions (`carlength`, `carwidth`, `carheight`, `wheelbase`): Larger cars generally cost more to manufacture and are priced higher. The wheelbase, in particular, is a key indicator of a car's size and ride quality.
+- `drivewheel`: The drivetrain type is a major design factor. A specialized system like 4wd (four-wheel drive) is typically more expensive than fwd (front-wheel drive) or rwd (rear-wheel drive).
+- `aspiration`: A turbocharged (turbo) engine is a more complex and expensive component than a standard (std) naturally aspirated engine.
+- `brand`: The manufacturer brand (e.g., Honda vs. Mercedes) is arguably the single most important determinant of price. You'd likely need to extract this from the CarName column.
+- `carbody`: The body style has a significant impact. A luxury sedan or a convertible is typically more expensive than a standard hatchback.
 
 ##### Moderate Correlation
 These variables are components of the engine that contribute to performance but are not as directly tied to price as the high-level metrics.
-- cylindernumber: This is related to enginesize and horsepower. More cylinders generally mean a larger, more expensive engine.
-- fuelsystem: The type of fuel injection system affects performance and cost. A modern multi-port fuel injection system (mpfi) is more advanced and often more expensive than an older carburetor-based system (1bbl, 2bbl).
-- citympg and highwaympg: Fuel efficiency often has an inverse relationship with price. High-performance, expensive cars tend to have lower MPG, while more affordable economy cars have higher MPG.
+- `cylindernumber`: This is related to enginesize and horsepower. More cylinders generally mean a larger, more expensive engine.
+- `fuelsystem`: The type of fuel injection system affects performance and cost. A modern multi-port fuel injection system (mpfi) is more advanced and often more expensive than an older carburetor-based system (1bbl, 2bbl).
+- `citympg` and `highwaympg`: Fuel efficiency often has an inverse relationship with price. High-performance, expensive cars tend to have lower MPG, while more affordable economy cars have higher MPG.
 
 ##### Weak or No Correlation
 These variables are unlikely to have a strong, consistent relationship with a car's price.
-- car_ID: This is a unique identifier for each car and has no correlation with any of its properties, including price.
-- doornumber: The number of doors has a weak relationship with price. While some two-door sports cars are expensive, so are four-door luxury sedans.
-- symboling: This is an insurance risk rating and does not directly relate to the car's market price.
+- `car_ID`: This is a unique identifier for each car and has no correlation with any of its properties, including price.
+- `doornumber`: The number of doors has a weak relationship with price. While some two-door sports cars are expensive, so are four-door luxury sedans.
+- `symboling`: This is an insurance risk rating and does not directly relate to the car's market price.
 
 ##### Potential indirect correlation
-- stroke, boreratio, compressionratio, peakrpm: These are technical engineering details that contribute to performance, but their direct, standalone correlation with the final sale price is often weak. The effects of these are better captured by the more holistic measures of horsepower and enginesize.
-
+- `stroke`, `boreratio`, `compressionratio`, `peakrpm`: These are technical engineering details that contribute to performance, but their direct, standalone correlation with the final sale price is often weak. The effects of these are better captured by the more holistic measures of horsepower and enginesize.
 
 ## Project Plan
-* Outline the high-level steps taken for the analysis.
-* How was the data managed throughout the collection, processing, analysis and interpretation steps?
-* Why did you choose the research methodologies you used?
+The data was obtained from Kaggle and the project was split into two parts: data cleaning and data analysis.
 
-## The rationale to map the business requirements to the Data Visualisations
-* List your business requirements and a rationale to map them to the Data Visualisations
+## The rationale to map the business requirements to the Data Visualizations
+The data visualization in this project focuses heavily on the relationship between the price and different variables.
 
 ## Analysis techniques used
-* List the data analysis methods used and explain limitations or alternative approaches.
-* How did you structure the data analysis techniques. Justify your response.
-* Did the data limit you, and did you use an alternative approach to meet these challenges?
-* How did you use generative AI tools to help with ideation, design thinking and code optimisation?
+For categorical data i've looked up at the average price for each categories. I've also looked for the relationship between horsepower and different categorical variables using box plots and swarm plots. For numerical variables I mainly looked at scatter plots and correlation values.
 
 ## Ethical considerations
-* Were there any data privacy, bias or fairness issues with the data?
-* How did you overcome any legal or societal issues?
+Since the data is obtained from publicly available source and contains no personal information, or any information about any individual person, there is little to no ethical consideration with regards to this data.
 
-## Dashboard Design
-* List all dashboard pages and their content, either blocks of information or widgets, like buttons, checkboxes, images, or any other item that your dashboard library supports.
-* Later, during the project development, you may revisit your dashboard plan to update a given feature (for example, at the beginning of the project you were confident you would use a given plot to display an insight but subsequently you used another plot type).
-* How were data insights communicated to technical and non-technical audiences?
-* Explain how the dashboard was designed to communicate complex data insights to different audiences. 
-
-## Unfixed Bugs
-* Please mention unfixed bugs and why they were not fixed. This section should include shortcomings of the frameworks or technologies used. Although time can be a significant variable to consider, paucity of time and difficulty understanding implementation are not valid reasons to leave bugs unfixed.
-* Did you recognise gaps in your knowledge, and how did you address them?
-* If applicable, include evidence of feedback received (from peers or instructors) and how it improved your approach or understanding.
+## Remaining issues and unfixed bugs
+* The cleaned tata's CarName entries might still contain spelling mistakes, but this did not affect the analysis as this variable was not used for analysis
+* THere are more correlations and relationships to be found, especially in more technical entries such as stroke, boreratio, compressionratio or peakrpm, or between variables other than price.
 
 ## Development Roadmap
 * What challenges did you face, and what strategies were used to overcome these challenges?
@@ -124,19 +110,10 @@ These variables are unlikely to have a strong, consistent relationship with a ca
 ## Main Data Analysis Libraries
 I used `pandas` to read and modify the .csv files. I used `matplotlib`, `seaborn` and `plotly` for data visualization
 
-
 ## Credits 
-I use business requirements and the data from the kaggle [Car Price Prediction](https://www.kaggle.com/datasets/hellbuoy/car-price-prediction). I relied heavily on AI (especially Google's Gemini) to understand the dataset content. I also relied on copilot and chatgpt for simple queries and I used it to help me a little bit with the code. I also used a copilot to generate one of the graphs, which uses sub libraries of plotly that are outside of the course curriculum. 
+I use business requirements and the data from the Kaggle [Car Price Prediction](https://www.kaggle.com/datasets/hellbuoy/car-price-prediction). I relied heavily on AI (especially Google's Gemini) to understand the dataset content. I also relied on copilot and chatgpt for simple queries and I used it to help me a little bit with the code. I also used a copilot to generate one of the graphs, which uses sub libraries of plotly that are outside of the course curriculum. 
 
 I also copied a lot of code from a test project I did a day earlier.
 
-### Content 
+The project used template from the Code Institute. Project template was from [here](https://github.com/Code-Institute-Org/data-analytics-template) and readme template from [here](https://github.com/Code-Institute-Solutions/da-README-template)
 
-- The text for the Home page was taken from Wikipedia Article A
-- Instructions on how to implement form validation on the Sign-Up page was taken from [Specific YouTube Tutorial](https://www.youtube.com/)
-- The icons in the footer were taken from [Font Awesome](https://fontawesome.com/)
-
-### Media
-
-- The photos used on the home and sign-up page are from This Open-Source site
-- The images used for the gallery page were taken from this other open-source site
