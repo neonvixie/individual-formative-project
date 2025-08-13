@@ -99,7 +99,9 @@ I used `pandas` to read and modify the .csv files. I used `matplotlib`, `seaborn
 
 
 ## Credits 
-I use business requirements and the data from the kaggle [Car Price Prediction](https://www.kaggle.com/datasets/hellbuoy/car-price-prediction). I relied heavily on AI (especially Google's Gemini) to understand the dataset content. I also relied on copilot and chatgpt for simple queries and I used it to help me a little bit with the code.
+I use business requirements and the data from the kaggle [Car Price Prediction](https://www.kaggle.com/datasets/hellbuoy/car-price-prediction). I relied heavily on AI (especially Google's Gemini) to understand the dataset content. I also relied on copilot and chatgpt for simple queries and I used it to help me a little bit with the code. I also used a copilot to generate one of the graphs, shich uses sublibraries of plotly that are outside of the course curriculum. 
+
+I also copied a lot of code from a test project I did a day earlier.
 
 ### Content 
 
