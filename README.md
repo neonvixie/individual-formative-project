@@ -3,7 +3,7 @@
 ## Dataset Content
 The data used in this project presents different variables associated with different car models, including their price. The raw dataset has 26 categories in total. Here is the brief description of each of the 26 categories contained in it:
 
-1. `Car_ID`: Unique id for each observation (Interger)
+1. `Car_ID`: Unique id for each observation (Integer)
 2. `Symboling`: Its assigned insurance risk rating, A value of +3 indicates that the auto is risky, -3 that it is probably pretty safe. (Categorical)
 3. `CarName`: Name of the car model (Categorical)
 4. `fueltype`: Car fuel type i.e gas or diesel (Categorical)
@@ -126,7 +126,7 @@ I used `pandas` to read and modify the .csv files. I used `matplotlib`, `seaborn
 
 
 ## Credits 
-I use business requirements and the data from the kaggle [Car Price Prediction](https://www.kaggle.com/datasets/hellbuoy/car-price-prediction). I relied heavily on AI (especially Google's Gemini) to understand the dataset content. I also relied on copilot and chatgpt for simple queries and I used it to help me a little bit with the code. I also used a copilot to generate one of the graphs, shich uses sublibraries of plotly that are outside of the course curriculum. 
+I use business requirements and the data from the kaggle [Car Price Prediction](https://www.kaggle.com/datasets/hellbuoy/car-price-prediction). I relied heavily on AI (especially Google's Gemini) to understand the dataset content. I also relied on copilot and chatgpt for simple queries and I used it to help me a little bit with the code. I also used a copilot to generate one of the graphs, which uses sub libraries of plotly that are outside of the course curriculum. 
 
 I also copied a lot of code from a test project I did a day earlier.
 
