@@ -3,7 +3,7 @@
 ## Dataset Content
 The data used in this project presents different variables associated with different car models, including their price. The raw dataset has 26 categories in total. Here is the brief description of each of the 26 categories contained in it:
 
-1. `Car_ID`: Unique id for each observation (Integer)
+1. `Car_ID`: Unique id for each observation (Numeric)
 2. `Symboling`: Its assigned insurance risk rating, A value of +3 indicates that the auto is risky, -3 that it is probably pretty safe. (Categorical)
 3. `CarName`: Name of the car model (Categorical)
 4. `fueltype`: Car fuel type i.e gas or diesel (Categorical)
@@ -51,7 +51,7 @@ The data used in this project presents different variables associated with diffe
 23. `peakrpm`: car peak rpm (Numeric). This stands for Revolutions Per Minute. It is a measure of how fast the engine crankshaft is rotating. Peak RPM is the specific engine speed at which the engine produces its maximum power.
 24. `citympg`: Mileage in city (Numeric). It measures fuel economy under typical urban driving conditions, with frequent stops and starts.
 25. `highwaympg`: Mileage on highway (Numeric). It measures fuel economy during a consistent, higher-speed drive, like on a highway, without stopping. Highway MPG is almost always higher because a car is more fuel-efficient when it doesn't have to constantly accelerate from a stop.
-26. `price` (Dependent variable): Price of a car (Numeric)
+26. `price` **(Dependent variable)**: Price of a car (Numeric)
 
 
 ## Business Requirements
@@ -88,7 +88,7 @@ These variables are unlikely to have a strong, consistent relationship with a ca
 - `stroke`, `boreratio`, `compressionratio`, `peakrpm`: These are technical engineering details that contribute to performance, but their direct, standalone correlation with the final sale price is often weak. The effects of these are better captured by the more holistic measures of horsepower and enginesize.
 
 ## Project Plan
-The data was obtained from Kaggle and the project was split into two parts: data cleaning and data analysis.
+The data was obtained from Kaggle and the project was split into two parts: data cleaning and data analysis. `data_cleaning.ipynb` notebook cleans the data and encodes it for machine learning, outputting two files: `CarPrice_cleaned.csv` and `CarPrice_encoded.csv`. The former one is then used in the `data_visualization.ipynb` notebook.
 
 ## The rationale to map the business requirements to the Data Visualizations
 The data visualization in this project focuses heavily on the relationship between the price and different variables.
@@ -101,19 +101,22 @@ Since the data is obtained from publicly available source and contains no person
 
 ## Remaining issues and unfixed bugs
 * The cleaned tata's CarName entries might still contain spelling mistakes, but this did not affect the analysis as this variable was not used for analysis
-* THere are more correlations and relationships to be found, especially in more technical entries such as stroke, boreratio, compressionratio or peakrpm, or between variables other than price.
+* The data has 26 variables in total, so there are more correlations and relationships to be found, especially in more technical entries such as stroke, boreratio, compressionratio or peakrpm, or between variables other than price.
 
 ## Development Roadmap
 * What challenges did you face, and what strategies were used to overcome these challenges?
+    - There were a few bugs here and there that I had to fix, including ones caused by misspelling
 * What new skills or tools do you plan to learn next based on your project experience? 
+    - I definitely want to understand visualization libraries in more detail. Especially plotly, including its other modules.
 
 ## Main Data Analysis Libraries
-I used `pandas` to read and modify the .csv files. I used `matplotlib`, `seaborn` and `plotly` for data visualization
+I used `pandas` to read and modify the .csv files. I used `matplotlib`, `seaborn` and `plotly` for data visualization. For encoding I also used `feature_engine.encoding` together with `sklearn.pipeline` for pipelining.
 
 ## Credits 
-I use business requirements and the data from the Kaggle [Car Price Prediction](https://www.kaggle.com/datasets/hellbuoy/car-price-prediction). I relied heavily on AI (especially Google's Gemini) to understand the dataset content. I also relied on copilot and chatgpt for simple queries and I used it to help me a little bit with the code. I also used a copilot to generate one of the graphs, which uses sub libraries of plotly that are outside of the course curriculum. 
-
-I also copied a lot of code from a test project I did a day earlier.
+I use business requirements and the data from the Kaggle [Car Price Prediction](https://www.kaggle.com/datasets/hellbuoy/car-price-prediction).
 
 The project used template from the Code Institute. Project template was from [here](https://github.com/Code-Institute-Org/data-analytics-template) and readme template from [here](https://github.com/Code-Institute-Solutions/da-README-template)
 
+I relied heavily on AI (especially Google's Gemini) to understand the dataset content and to write the summary of what is the meaning behind different variables and categories. I also relied on copilot and chatgpt for simple queries and I used it to help me a little bit with the code. I also used the copilot to generate one of the graphs, which uses plotly modules that I am not fully familiar with.
+
+I also copied a lot of code from a test project I did a day earlier.
