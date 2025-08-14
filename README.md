@@ -102,6 +102,8 @@ Since the data is obtained from publicly available source and contains no person
 ## Remaining issues and unfixed bugs
 * The cleaned tata's CarName entries might still contain spelling mistakes, but this did not affect the analysis as this variable was not used for analysis
 * The data has 26 variables in total, so there are more correlations and relationships to be found, especially in more technical entries such as stroke, boreratio, compressionratio or peakrpm, or between variables other than price.
+* the notebook has to be deployed or ran locally to fully show all graphs since interactive plotly graphs do not show up in the notebook on GitHub
+* I get the `FutureWarning` in the data encoding section of the data cleaning notebook.
 
 ## Development Roadmap
 * What challenges did you face, and what strategies were used to overcome these challenges?
